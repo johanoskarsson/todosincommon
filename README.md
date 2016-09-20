@@ -12,9 +12,9 @@ In order to run your own register an app here: https://foursquare.com/developers
 
 If you are deploying on heroku:
 
-heroku login
-heroku create
-heroku config:set FOURSQUARE_CLIENT_ID=<yourclientid>
-heroku config:set FOURSQUARE_SECRET=<yoursecret>
+    heroku login
+    heroku create
+    heroku config:set FOURSQUARE_CLIENT_ID=<yourclientid>
+    heroku config:set FOURSQUARE_SECRET=<yoursecret>
 
-git push heroku master
+    git push heroku master
