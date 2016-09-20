@@ -1,0 +1,24 @@
+default: &default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+
+# I'm too lazy to remove these passwords.
+development:
+  <<: *default
+  database: foursquarediff_dev
+  username: foursquarediff
+  password: A7qf2KP472Kh3
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: foursquarediff_test
+  username: foursquarediff
+  password: A7qf2KP472Kh3
+
+production:
+  <<: *default
+  database: foursquarediff_prod

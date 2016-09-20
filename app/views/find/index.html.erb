@@ -1,0 +1,39 @@
+<% if @friends.blank? %>
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--6-col mdl-cell--3-offset mdl-cell--middle">
+      <div class="mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title">
+          <h2 class="mdl-card__title-text">Bummer</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+          Looks like you haven't added any friends on Foursquare. Head over there and add a few, whydon'tcha?
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+          <a href="https://www.foursquare.com" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+            Add friends on Foursquare
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+<% else %>
+  <div class="mdl-grid">
+    <div class="mdl-card mdl-cell mdl-cell--6-col mdl-cell--3-offset mdl-cell--middle mdl-color--white mdl-shadow--2dp mdl-cell">
+      <div class="mdl-list">
+        <div class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">
+            <h5>Who do you want to find todos in common with?</h5>
+          </span>
+        </div>
+        <% @friends.each do |friend| %>
+          <div class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+              <img src="<%= friend.photo_url %>" class="mdl-list__item-avatar"/>
+              <a href="/intersect/<%= friend.id %>"><span><%= friend.name %></span></a>
+            </span>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <div>
+<% end %>
